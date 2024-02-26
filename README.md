@@ -14,7 +14,12 @@
 
 ## How to run
 
-Make sure to have Docker and Docker Compose installed on your machine.
+Clone the repo:
+
+```bash
+git clone https://github.com/Akronae/todealt
+cd todealt
+```
 
 Decrypt `.env.enc` file with the password you received (openssl required):
 
@@ -26,6 +31,9 @@ bash decrypt.sh
 > [!TIP]
 > If you did not receive the password or if you are experiencing troubles, feel free to call me at any time.
 
+### Run with Docker (recommended)
+
+Make sure to have Docker and Docker Compose installed on your machine.  
 Then run:
 
 ```bash
@@ -33,6 +41,38 @@ docker compose up
 ```
 
 Wait for every container to start up and then visit: http://localhost:3000
+
+### Run a dev build manually
+
+> [!TIP]
+> NVM and Yarn are used in these examples, you can easily adapt them to your own tools if you need to.
+
+> [!WARNING]
+> You need to have a MongoDB instance running on the `MONGO_URI` address specified in your `.env`.
+
+Copy your decrypted `.env`
+
+```bash
+cp .env {app,api}/.env.local
+```
+
+Run Api:
+
+```bash
+cd api
+nvm install
+yarn
+yarn start:dev
+```
+
+In another terminal, run App:
+
+```bash
+cd app
+nvm install
+yarn
+yarn dev
+```
 
 ## ✨ Features
 
