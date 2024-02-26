@@ -17,5 +17,5 @@ export const ApiClientWith = ({ token }: ApiClientParams) =>
   });
 
 export const ApiClient = ApiClientWith({
-  token: Auth.apiToken ?? undefined,
+  token: async () => Auth.apiToken!,
 }).default;
