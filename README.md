@@ -53,7 +53,8 @@ Wait for every container to start up and then visit: http://localhost:3000
 Copy your decrypted `.env`
 
 ```bash
-cp .env {app,api}/.env.local
+cp .env app/.env.local
+cp .env api/.env.local
 ```
 
 Run Api:
